@@ -1,10 +1,13 @@
 body{
   background-color:  #e6e6e6;
 }
-
+  #btnlog,#register{
+  margin-right: 25px;
+}
+ 
 .form-bg{
  /* background: #00b4ef;*/
-  margin-top: 85px;
+  margin-top: 50px;
 }
 .form-horizontal{
   background: #fff;
@@ -13,9 +16,9 @@ body{
 }
 .form-horizontal .heading{
   display: block;
-  font-size: 35px;
+  font-size: 15px;
   font-weight: 700;
-  padding: 35px 0;
+  padding: 11px 0;
   border-bottom: 1px solid #f0f0f0;
   margin-bottom: 30px;
 }
@@ -30,7 +33,7 @@ body{
   box-shadow: none;
   padding: 0 20px 0 45px;
   height: 50px;
-  transition: all 0.3s ease 0s;
+ 
 }
 .form-horizontal .form-control:focus{
   background: #e0e0e0;
@@ -43,7 +46,7 @@ body{
   left: 60px;
   font-size: 17px;
   color: #c8c8c8;
-  transition : all 0.5s ease 0s;
+  /*transition : all 0.5s ease 0s;*/
 }
 .form-horizontal .form-control:focus + i{
   color: #00b4ef;
@@ -55,7 +58,7 @@ body{
   right: 60px;
   font-size: 20px;
   color: #808080;
-  transition: all 0.5s ease 0s;
+   
 }
 .form-horizontal .fa-question-circle:hover{
   color: #000;
@@ -88,17 +91,15 @@ body{
   border: 3px solid #fff;
   border-top: none;
   border-right: none;
-  background: transparent;
+ /* background: transparent;
   opacity: 0;
   -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  transform: rotate(-45deg);*/
 }
 .form-horizontal .main-checkbox input[type=checkbox]{
   visibility: hidden;
 }
-.form-horizontal .main-checkbox input[type=checkbox]:checked + label:after{
-  opacity: 1;
-}
+ 
 .form-horizontal .text{
   float: left;
   margin-left: 7px;
@@ -112,9 +113,8 @@ body{
   color: #fff;
   background: #00b4ef;
   padding: 10px 25px;
-  border: none;
-  text-transform: capitalize;
-  transition: all 0.5s ease 0s;
+  
+ 
 }
 @media only screen and (max-width: 479px){
   .form-horizontal .form-group{
@@ -129,7 +129,23 @@ body{
 }
  
 
-
-#inputEmail3,#register{
-  float: left;
+#logout{
+  float: right;
+  position: relative;
+  top: -60px;
+  left: -12px;
 }
+
+ #username{
+  position: absolute;
+  top: 8px;
+  left: 48px;
+ }
+ #password{
+  position: absolute;
+  left: 47px;
+  top: 8px;
+ }
+ .help-blocck{
+   color:red;
+ }

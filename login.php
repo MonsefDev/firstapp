@@ -20,9 +20,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Check if password is empty
-    if(empty(trim($_POST['password']))){
-        $password_err = 'Please enter your password.';
+    if(empty(trim($_POST['password']))  && empty(trim($_POST['password'])) ){
+        $username_err = 'Entrer votre username.';
+        $password_err  = 'Entrer votre password.';
     } else{
+        $password = trim($_POST['username']);
         $password = trim($_POST['password']);
     }
     
@@ -53,15 +55,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             save the username to the session */
                             session_start();
                             $_SESSION['username'] = $username;      
-                            header("location: welcome.php");
+                            header("location: index.php");
                         } else{
                             // Display an error message if password is not valid
-                            $password_err = 'The password you entered was not valid.';
+                            $password_err = 'Le mot de passe que vous avez fait est incorrect.';
                         }
                     }
                 } else{
                     // Display an error message if username doesn't exist
-                    $username_err = 'No account found with that username.';
+                    $password_err = "Aucun compte trouvé avec ce nom d'utilisateur.";
                 }
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -134,16 +136,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                          </span>
                     <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                         <div class="form-group">
+                        <img id="username" src="username.png" alt="username">
                             <input type="text" class="form-control" id="inputEmail3" placeholder="Email or Username" name="username"  value="<?php echo $username; ?>" >
-                            <span class="help-block"><?php echo $username_err; ?></span>
+                            <span class="help-blocck"><?php echo $username_err; ?></span>
                             <i class="fa fa-user"></i>
                         </div>
                         
                     </div>
                     <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">    
-                        <div class="form-group help">
+                        <div class="form-group">
+                        <img id="password" src="password.png" alt="password">
                             <input type="password" class="form-control" id="inputPassword3" name="password"  placeholder="Password">
-                            <span class="help-block"><?php echo $password_err; ?></span>
+                            <span class="help-blocck"><?php echo $password_err; ?></span>
                             <i class="fa fa-lock"></i>
                             <a href="#" class="fa fa-question-circle"></a>
                         </div>
@@ -151,13 +155,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </div>    
                     <div class="form-group">
                         <div>
-                            <a href="registre.php" class="btn btn-info" id="register">Registre</a>
-                                           
-                             
+                            <a href="registre.php" class="btn btn-info">Registre</a>
+                           
+                           
+                                    
+                        </div>
+                        <div >
+                        <button id="btnlog" type="submit" class="btn btn-default" >Login</button>
                         </div>
                             
                         
-                        <button type="submit" class="btn btn-default">Login</button>
+                        
                     </div>
                 </form>
             </div>

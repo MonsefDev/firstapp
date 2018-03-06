@@ -153,7 +153,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="row">
             <div class="col-md-offset-3 col-md-6">
                 <form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                    <span class="heading"><img src="register.png" alt="user">
+                    <span class="heading"><img src="user.png" alt="user">
                             </span>
                     <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                         <div class="form-group">
@@ -187,7 +187,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                           </div>
                             
                         
-                        <input type="submit" class="btn btn-primary" value="Submit">
+                        <input id="register" type="submit" class="btn btn-primary" value="Submit">
                     </div>
                 </form>
             </div>
